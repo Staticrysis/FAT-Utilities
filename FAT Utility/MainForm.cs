@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FAT_Utility
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
