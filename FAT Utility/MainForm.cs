@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FAT_Utility
 {
@@ -15,6 +16,10 @@ namespace FAT_Utility
         public MainForm()
         {
             InitializeComponent();
+
+            //listView_DriveInfo. = DriveInfo.GetDrives();
+            bindingSource_DriveInfo.DataSource = DriveInfo.GetDrives();
+            
         }
     }
 }

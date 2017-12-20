@@ -5,7 +5,13 @@ VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAT Utility", "FAT Utility\FAT Utility.csproj", "{07B7C581-1FCA-4D73-B2D6-47C7F21F728E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscUtils", "..\DiscUtilsSrc-0.10\src\DiscUtils.csproj", "{DBB340F9-2386-43C2-A473-FA496CBE07A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscUtils", "DiscUtilsSrc-0.10\src\DiscUtils.csproj", "{DBB340F9-2386-43C2-A473-FA496CBE07A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISOCreate", "DiscUtilsSrc-0.10\utils\ISOCreate\ISOCreate.csproj", "{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscUtils.Common", "DiscUtilsSrc-0.10\utils\DiscUtils.Common\DiscUtils.Common.csproj", "{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskClone", "DiscUtilsSrc-0.10\utils\DiskClone\DiskClone.csproj", "{B422A686-76F8-4E61-A4CF-57EFE675C328}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,30 @@ Global
 		{DBB340F9-2386-43C2-A473-FA496CBE07A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DBB340F9-2386-43C2-A473-FA496CBE07A4}.SignedRelease|Any CPU.ActiveCfg = SignedRelease|Any CPU
 		{DBB340F9-2386-43C2-A473-FA496CBE07A4}.SignedRelease|Any CPU.Build.0 = SignedRelease|Any CPU
+		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Release (StyleCop)|Any CPU.ActiveCfg = Release (StyleCop)|Any CPU
+		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Release (StyleCop)|Any CPU.Build.0 = Release (StyleCop)|Any CPU
+		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.SignedRelease|Any CPU.ActiveCfg = SignedRelease|Any CPU
+		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.SignedRelease|Any CPU.Build.0 = SignedRelease|Any CPU
+		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Release (StyleCop)|Any CPU.ActiveCfg = Release (StyleCop)|Any CPU
+		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Release (StyleCop)|Any CPU.Build.0 = Release (StyleCop)|Any CPU
+		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.SignedRelease|Any CPU.ActiveCfg = SignedRelease|Any CPU
+		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.SignedRelease|Any CPU.Build.0 = SignedRelease|Any CPU
+		{B422A686-76F8-4E61-A4CF-57EFE675C328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B422A686-76F8-4E61-A4CF-57EFE675C328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B422A686-76F8-4E61-A4CF-57EFE675C328}.Release (StyleCop)|Any CPU.ActiveCfg = Release (StyleCop)|Any CPU
+		{B422A686-76F8-4E61-A4CF-57EFE675C328}.Release (StyleCop)|Any CPU.Build.0 = Release (StyleCop)|Any CPU
+		{B422A686-76F8-4E61-A4CF-57EFE675C328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B422A686-76F8-4E61-A4CF-57EFE675C328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B422A686-76F8-4E61-A4CF-57EFE675C328}.SignedRelease|Any CPU.ActiveCfg = SignedRelease|Any CPU
+		{B422A686-76F8-4E61-A4CF-57EFE675C328}.SignedRelease|Any CPU.Build.0 = SignedRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
