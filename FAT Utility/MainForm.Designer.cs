@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.dataGridView_DriveInfo = new System.Windows.Forms.DataGridView();
-            this.bindingSource_DriveInfo = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Column_Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column_BitLocker = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column_CreateImage = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -45,6 +43,8 @@
             this.availableFreeSpaceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.volumeLabelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource_DriveInfo = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -87,20 +87,6 @@
             this.dataGridView_DriveInfo.Name = "dataGridView_DriveInfo";
             this.dataGridView_DriveInfo.Size = new System.Drawing.Size(679, 371);
             this.dataGridView_DriveInfo.TabIndex = 1;
-            // 
-            // bindingSource_DriveInfo
-            // 
-            this.bindingSource_DriveInfo.DataSource = typeof(System.IO.DriveInfo);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.toolStrip1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(120, 129);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Options";
             // 
             // Column_Selected
             // 
@@ -176,6 +162,20 @@
             this.volumeLabelDataGridViewTextBoxColumn.DataPropertyName = "VolumeLabel";
             this.volumeLabelDataGridViewTextBoxColumn.HeaderText = "VolumeLabel";
             this.volumeLabelDataGridViewTextBoxColumn.Name = "volumeLabelDataGridViewTextBoxColumn";
+            // 
+            // bindingSource_DriveInfo
+            // 
+            this.bindingSource_DriveInfo.DataSource = typeof(System.IO.DriveInfo);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.toolStrip1);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(120, 129);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Options";
             // 
             // toolStrip1
             // 
