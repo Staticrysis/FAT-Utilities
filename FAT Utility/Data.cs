@@ -9,8 +9,9 @@ namespace FAT_Utility
 {
     class Data
     {
-        public DriveInfo DriveInfo { get; set; } = null;
-        public String[] ExcludedDriveLetters { get; set; } = new String[] { "C", "D" };
+        static private DriveInfo AllDriveInfo { get; set; }
+        static private DriveInfo FilteredDriveInfo { get; set; }
+        static public String[]  ExcludedDriveLetters { get; set; } = new String[] { "C", "D" };
 
 
         static public IEnumerable<DriveInfo> SelectedDriveInfo(string[] SelectedDrives) 

@@ -22,5 +22,39 @@ namespace FAT_Utility
             
         }
 
+        private void toolStripButton_Options_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton_RunAll_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton_StressTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton_MountImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton_BitLock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton_CreateImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton_RefreshDrives_Click(object sender, EventArgs e)
+        {
+            bindingSource_DriveInfo.DataSource = Data.SelectedDriveInfo(Data.ExcludedDriveLetters);
+        }
     }
 }
