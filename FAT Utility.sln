@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAT Utility", "FAT Utility\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscUtils", "DiscUtilsSrc-0.10\src\DiscUtils.csproj", "{DBB340F9-2386-43C2-A473-FA496CBE07A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISOCreate", "DiscUtilsSrc-0.10\utils\ISOCreate\ISOCreate.csproj", "{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscUtils.Common", "DiscUtilsSrc-0.10\utils\DiscUtils.Common\DiscUtils.Common.csproj", "{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskClone", "DiscUtilsSrc-0.10\utils\DiskClone\DiskClone.csproj", "{B422A686-76F8-4E61-A4CF-57EFE675C328}"
@@ -37,14 +35,6 @@ Global
 		{DBB340F9-2386-43C2-A473-FA496CBE07A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DBB340F9-2386-43C2-A473-FA496CBE07A4}.SignedRelease|Any CPU.ActiveCfg = SignedRelease|Any CPU
 		{DBB340F9-2386-43C2-A473-FA496CBE07A4}.SignedRelease|Any CPU.Build.0 = SignedRelease|Any CPU
-		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Release (StyleCop)|Any CPU.ActiveCfg = Release (StyleCop)|Any CPU
-		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Release (StyleCop)|Any CPU.Build.0 = Release (StyleCop)|Any CPU
-		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.SignedRelease|Any CPU.ActiveCfg = SignedRelease|Any CPU
-		{13F4D518-5F41-4C08-A4AE-CBEEEFFFE866}.SignedRelease|Any CPU.Build.0 = SignedRelease|Any CPU
 		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40F44FCF-5C77-404D-82BD-9E17BDA5E04B}.Release (StyleCop)|Any CPU.ActiveCfg = Release (StyleCop)|Any CPU

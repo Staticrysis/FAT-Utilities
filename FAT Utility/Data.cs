@@ -4,6 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DiscUtils;
+using DiskClone;
+using DiscUtils.Common;
+
 
 namespace FAT_Utility
 {
@@ -15,7 +19,26 @@ namespace FAT_Utility
         static public String[] ExcludedDriveTypes { get { return FAT_Utility.Properties.Settings.Default.ExcludedDriveTypes.Split(','); } }
         static public String[] ExcludedDriveValumeLabels { get { return FAT_Utility.Properties.Settings.Default.ExcludedDriveVolumeLabel.Split(','); } }
 
-        
+        static public void StressTest()
+        {
+            
+        }
+
+        static public void MountImage()
+        {
+
+
+        }
+
+        static public void BitLock()
+        {
+
+        }
+
+        public void CreateImage()
+        {
+           // DiscUtils.Dmg.Disk.CreateDisk();
+        }
 
         static public DriveInfo GetDriveInfo (Char DriveLetter)
         {

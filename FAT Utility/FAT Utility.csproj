@@ -1616,5 +1616,19 @@
     <Content Include="Resources\148705-essential-collection\svg\zoom-in.svg" />
     <Content Include="Resources\148705-essential-collection\svg\zoom-out.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DiscUtilsSrc-0.10\src\DiscUtils.csproj">
+      <Project>{dbb340f9-2386-43c2-a473-fa496cbe07a4}</Project>
+      <Name>DiscUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DiscUtilsSrc-0.10\utils\DiscUtils.Common\DiscUtils.Common.csproj">
+      <Project>{40f44fcf-5c77-404d-82bd-9e17bda5e04b}</Project>
+      <Name>DiscUtils.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DiscUtilsSrc-0.10\utils\DiskClone\DiskClone.csproj">
+      <Project>{b422a686-76f8-4e61-a4cf-57efe675c328}</Project>
+      <Name>DiskClone</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

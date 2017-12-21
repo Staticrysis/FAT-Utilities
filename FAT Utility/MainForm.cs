@@ -32,7 +32,6 @@ namespace FAT_Utility
         private void toolStripButton_StressTest_Click(object sender, EventArgs e)
         {
 
-
         }
 
         private void toolStripButton_MountImage_Click(object sender, EventArgs e)
