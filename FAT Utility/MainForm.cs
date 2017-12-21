@@ -16,10 +16,8 @@ namespace FAT_Utility
         public MainForm()
         {
             InitializeComponent();
-
-            //listView_DriveInfo. = DriveInfo.GetDrives();
-            bindingSource_DriveInfo.DataSource = DriveInfo.GetDrives();
-            
+            //InitializeGridView();
+            toolStripButton_RefreshDrives_Click(null, null);
         }
 
         private void toolStripButton_Options_Click(object sender, EventArgs e)
@@ -34,6 +32,7 @@ namespace FAT_Utility
 
         private void toolStripButton_StressTest_Click(object sender, EventArgs e)
         {
+
 
         }
 
@@ -54,7 +53,17 @@ namespace FAT_Utility
 
         private void toolStripButton_RefreshDrives_Click(object sender, EventArgs e)
         {
-            bindingSource_DriveInfo.DataSource = Data.SelectedDriveInfo(Data.ExcludedDriveLetters);
+            //bindingSource_DriveInfo.DataSource 
+              //dataGridView_DriveInfo.DataSource 
+            bindingSource_MultiDriveInfo.DataSource = Data.UpdateDriveInfo();
+        }
+
+        private void dataGridView_DriveInfo_Click(object sender, EventArgs e)
+        {
+            var v = (DataGridView)sender;
+            if (v.CurrentRow.DataBoundItem != null)
+                bindingSource_SelectedDriveInfo.DataSource = v.CurrentRow.DataBoundItem;
+            //Maybe place a progress bar update in this event later. 
         }
     }
 }
