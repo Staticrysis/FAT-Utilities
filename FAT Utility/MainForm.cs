@@ -16,7 +16,6 @@ namespace FAT_Utility
         public MainForm()
         {
             InitializeComponent();
-            //InitializeGridView();
             toolStripButton_RefreshDrives_Click(null, null);
         }
 
@@ -53,8 +52,6 @@ namespace FAT_Utility
 
         private void toolStripButton_RefreshDrives_Click(object sender, EventArgs e)
         {
-            //bindingSource_DriveInfo.DataSource 
-              //dataGridView_DriveInfo.DataSource 
             bindingSource_MultiDriveInfo.DataSource = Data.UpdateDriveInfo();
         }
 
