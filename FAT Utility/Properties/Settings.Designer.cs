@@ -25,7 +25,7 @@ namespace FAT_Utility.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("L.1")]
         public string BitlockerPassword {
             get {
                 return ((string)(this["BitlockerPassword"]));
@@ -68,6 +68,18 @@ namespace FAT_Utility.Properties {
             }
             set {
                 this["ExcludedDriveVolumeLabel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExcludedDriveFormat {
+            get {
+                return ((string)(this["ExcludedDriveFormat"]));
+            }
+            set {
+                this["ExcludedDriveFormat"] = value;
             }
         }
     }

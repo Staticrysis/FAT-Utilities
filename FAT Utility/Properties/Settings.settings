@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="BitlockerPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">L.1</Value>
     </Setting>
     <Setting Name="ExcludedDriveLetters" Type="System.String" Scope="User">
       <Value Profile="(Default)">c,d</Value>
@@ -12,6 +12,9 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ExcludedDriveVolumeLabel" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExcludedDriveFormat" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

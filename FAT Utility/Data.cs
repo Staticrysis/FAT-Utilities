@@ -12,16 +12,48 @@ using System.Management.Automation.Runspaces;
 
 namespace FAT_Utility
 {
-    class Data
+    static class Data
     {
+        
         static private DriveInfo[] AllDriveInfo { get; set; }
         static private DriveInfo[] FilteredDriveInfo { get; set; }
         static private EnhancedDriveInfo[] EnhancedDriveInfo { get; set; }
         static public String[] ExcludedDriveLetters { get { return FAT_Utility.Properties.Settings.Default.ExcludedDriveLetters.Split(','); } }
         static public String[] ExcludedDriveTypes { get { return FAT_Utility.Properties.Settings.Default.ExcludedDriveTypes.Split(','); } }
         static public String[] ExcludedDriveValumeLabels { get { return FAT_Utility.Properties.Settings.Default.ExcludedDriveVolumeLabel.Split(','); } }
+        static public String[] ExcludedDriveFormat { get { return FAT_Utility.Properties.Settings.Default.ExcludedDriveFormat.Split(','); } }
 
-        static public void Testing()
+        static public void StressTest(List<DriveInfo> DIs)
+        {
+            
+        }
+
+        static public void MountImage(List<DriveInfo> DIs)
+        {
+            
+            
+        }
+
+        static public void BitLock(List<DriveInfo> DIs)
+        {
+
+            foreach (DriveInfo DI in DIs)
+            {
+                string script =
+                    "$SecureString = ConvertTo - SecureString " + FAT_Utility.Properties.Settings.Default.BitlockerPassword + " - AsPlainText - Force"
+                    + "Enable - BitLocker - MountPoint " + DI.RootDirectory.ToString()[0] + ": - EncryptionMethod Aes256 –UsedSpaceOnly - Pin $SecureString - TPMandPinProtector";
+            }
+
+
+        }
+
+        static public void CreateImage(List<DriveInfo> DIs)
+        {
+            // DiscUtils.Dmg.Disk.CreateDisk();
+        }
+
+
+        static public void PSScriptService(string script)
         {
             Runspace runspace = RunspaceFactory.CreateRunspace();
             runspace.Open();
@@ -30,35 +62,13 @@ namespace FAT_Utility
             var results = pipeline.Invoke();
             runspace.Close();
 
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (PSObject obj in results)
-            {
-                stringBuilder.AppendLine(obj.ToString());
-            }
-
-            System.Windows.Forms.MessageBox.Show(stringBuilder.ToString());
-        }
-
-        static public void StressTest()
-        {
-            
-        }
-
-        static public void MountImage()
-        {
-            
-            
-        }
-
-        static public void BitLock()
-        {
-            //PS C:\> $SecureString = ConvertTo - SecureString "1234" - AsPlainText - Force
-            //PS C:\> Enable - BitLocker - MountPoint "C:" - EncryptionMethod Aes256 –UsedSpaceOnly - Pin $SecureString - TPMandPinProtector
-        }
-
-        public void CreateImage()
-        {
-            // DiscUtils.Dmg.Disk.CreateDisk();
+            //StringBuilder stringBuilder = new StringBuilder();
+            //foreach (PSObject obj in results)
+            //{
+            //    stringBuilder.AppendLine(obj.ToString());
+            //}
+            //
+            //System.Windows.Forms.MessageBox.Show(stringBuilder.ToString());
         }
 
         static public DriveInfo GetDriveInfo (Char DriveLetter)
@@ -69,8 +79,9 @@ namespace FAT_Utility
         static public IEnumerable<DriveInfo> UpdateDriveInfo () 
         {
             FilteredDriveInfo = DriveInfo.GetDrives();
-            FilteredDriveInfo = FilteredDriveInfo.Where(drive => !ExcludedDriveLetters.Any(ExDrive => Char.ToUpper(drive.ToString()[0]) == Char.ToUpper(ExDrive[0]))).ToArray();
+            FilteredDriveInfo = FilteredDriveInfo.Where(drive => !ExcludedDriveLetters.Any(ExDrive => ExDrive != "" ? Char.ToUpper(drive.ToString()[0]) == Char.ToUpper(ExDrive[0]) : false)).ToArray();
             FilteredDriveInfo = FilteredDriveInfo.Where(drive => !ExcludedDriveTypes.Any(ExDrive => drive.DriveType.ToString().ToUpper() == ExDrive.ToUpper())).ToArray();
+            FilteredDriveInfo = FilteredDriveInfo.Where(drive => !ExcludedDriveFormat.Any(ExDrive => ExDrive.ToUpper() == drive.DriveFormat.ToUpper())).ToArray();
             FilteredDriveInfo = FilteredDriveInfo.Where(drive => !ExcludedDriveValumeLabels.Any(ExDrive => ExDrive == "" ? false : drive.VolumeLabel.ToUpper() == ExDrive.ToUpper())).ToArray();
             FilteredDriveInfo = FilteredDriveInfo;
             EnhancedDriveInfo = new EnhancedDriveInfo[FilteredDriveInfo.Count()];

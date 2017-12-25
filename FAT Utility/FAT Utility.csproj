@@ -90,6 +90,17 @@
     <None Include="Properties\DataSources\Data.datasource" />
     <None Include="Properties\DataSources\EnhancedDriveInfo.datasource" />
     <None Include="Properties\DataSources\System.IO.DriveInfo.datasource" />
+    <None Include="Properties\DataSources\System.IO.ErrorEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.IO.ErrorEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.IO.FileSystemEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.IO.FileSystemEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.IO.FileSystemWatcher.datasource" />
+    <None Include="Properties\DataSources\System.IO.InternalBufferOverflowException.datasource" />
+    <None Include="Properties\DataSources\System.IO.InvalidDataException.datasource" />
+    <None Include="Properties\DataSources\System.IO.IODescriptionAttribute.datasource" />
+    <None Include="Properties\DataSources\System.IO.RenamedEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.IO.RenamedEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.IO.WaitForChangedResult.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
