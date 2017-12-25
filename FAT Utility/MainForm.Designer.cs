@@ -37,30 +37,17 @@
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.bindingSource_SelectedDriveInfo = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView_DriveInfo = new System.Windows.Forms.DataGridView();
-            this.rootDirectoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.driveTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.driveFormatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.volumeLabelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_StressTest = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_MountImage = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_BitLocker = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_CreateImage = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bindingSource_MultiDriveInfo = new System.Windows.Forms.BindingSource(this.components);
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -85,6 +72,17 @@
             this.toolStripButton_BitLock = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_CreateImage = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.driveInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rootDirectoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driveFormatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.volumeLabelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_StressTest = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_MountImage = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_BitLocker = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_CreateImage = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.enhancedDriveInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             Label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -103,6 +101,8 @@
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driveInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enhancedDriveInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Label1
@@ -110,9 +110,10 @@
             Label1.AutoSize = true;
             Label1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource_SelectedDriveInfo, "Name", true));
             Label1.ForeColor = System.Drawing.Color.Lime;
-            Label1.Location = new System.Drawing.Point(109, 0);
+            Label1.Location = new System.Drawing.Point(145, 0);
+            Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Label1.Name = "Label1";
-            Label1.Size = new System.Drawing.Size(16, 13);
+            Label1.Size = new System.Drawing.Size(20, 16);
             Label1.TabIndex = 8;
             Label1.Text = "---";
             // 
@@ -125,9 +126,10 @@
             label2.AutoSize = true;
             label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource_SelectedDriveInfo, "DriveFormat", true));
             label2.ForeColor = System.Drawing.Color.Lime;
-            label2.Location = new System.Drawing.Point(109, 13);
+            label2.Location = new System.Drawing.Point(145, 16);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(16, 13);
+            label2.Size = new System.Drawing.Size(20, 16);
             label2.TabIndex = 10;
             label2.Text = "---";
             // 
@@ -136,9 +138,10 @@
             label3.AutoSize = true;
             label3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource_SelectedDriveInfo, "DriveType", true));
             label3.ForeColor = System.Drawing.Color.Lime;
-            label3.Location = new System.Drawing.Point(109, 36);
+            label3.Location = new System.Drawing.Point(145, 44);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(16, 13);
+            label3.Size = new System.Drawing.Size(20, 16);
             label3.TabIndex = 11;
             label3.Text = "---";
             // 
@@ -147,9 +150,10 @@
             label4.AutoSize = true;
             label4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource_SelectedDriveInfo, "VolumeLabel", true));
             label4.ForeColor = System.Drawing.Color.Lime;
-            label4.Location = new System.Drawing.Point(109, 56);
+            label4.Location = new System.Drawing.Point(145, 69);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(16, 13);
+            label4.Size = new System.Drawing.Size(20, 16);
             label4.TabIndex = 12;
             label4.Text = "---";
             // 
@@ -158,9 +162,10 @@
             label5.AutoSize = true;
             label5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource_SelectedDriveInfo, "IsReady", true));
             label5.ForeColor = System.Drawing.Color.Lime;
-            label5.Location = new System.Drawing.Point(109, 76);
+            label5.Location = new System.Drawing.Point(145, 94);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(16, 13);
+            label5.Size = new System.Drawing.Size(20, 16);
             label5.TabIndex = 13;
             label5.Text = "---";
             // 
@@ -169,9 +174,10 @@
             label6.AutoSize = true;
             label6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource_SelectedDriveInfo, "AvailableFreeSpace", true));
             label6.ForeColor = System.Drawing.Color.Lime;
-            label6.Location = new System.Drawing.Point(109, 96);
+            label6.Location = new System.Drawing.Point(145, 119);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(16, 13);
+            label6.Size = new System.Drawing.Size(20, 16);
             label6.TabIndex = 14;
             label6.Text = "---";
             // 
@@ -180,9 +186,10 @@
             label7.AutoSize = true;
             label7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource_SelectedDriveInfo, "TotalSize", true));
             label7.ForeColor = System.Drawing.Color.Lime;
-            label7.Location = new System.Drawing.Point(109, 117);
+            label7.Location = new System.Drawing.Point(145, 145);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(16, 13);
+            label7.Size = new System.Drawing.Size(20, 16);
             label7.TabIndex = 15;
             label7.Text = "---";
             // 
@@ -195,7 +202,8 @@
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView_DriveInfo);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitter1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tabControl1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(780, 296);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1074, 364);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
@@ -203,8 +211,9 @@
             this.toolStripContainer1.LeftToolStripPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.toolStrip2);
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(882, 296);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1176, 364);
             this.toolStripContainer1.TabIndex = 2;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -218,11 +227,11 @@
             this.dataGridView_DriveInfo.AutoGenerateColumns = false;
             this.dataGridView_DriveInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_DriveInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridView_DriveInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView_DriveInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -230,165 +239,42 @@
             this.dataGridView_DriveInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_DriveInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rootDirectoryDataGridViewTextBoxColumn,
-            this.driveTypeDataGridViewTextBoxColumn,
             this.driveFormatDataGridViewTextBoxColumn,
             this.volumeLabelDataGridViewTextBoxColumn,
+            this.totalSizeDataGridViewTextBoxColumn,
             this.Column_Selected,
             this.Column_StressTest,
             this.Column_MountImage,
             this.Column_BitLocker,
             this.Column_CreateImage});
             this.dataGridView_DriveInfo.DataSource = this.bindingSource_MultiDriveInfo;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_DriveInfo.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridView_DriveInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_DriveInfo.EnableHeadersVisualStyles = false;
-            this.dataGridView_DriveInfo.GridColor = System.Drawing.Color.Yellow;
-            this.dataGridView_DriveInfo.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_DriveInfo.Name = "dataGridView_DriveInfo";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_DriveInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView_DriveInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_DriveInfo.Size = new System.Drawing.Size(570, 296);
-            this.dataGridView_DriveInfo.TabIndex = 4;
-            this.dataGridView_DriveInfo.Click += new System.EventHandler(this.dataGridView_DriveInfo_Click);
-            // 
-            // rootDirectoryDataGridViewTextBoxColumn
-            // 
-            this.rootDirectoryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.rootDirectoryDataGridViewTextBoxColumn.DataPropertyName = "RootDirectory";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Lime;
-            this.rootDirectoryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.rootDirectoryDataGridViewTextBoxColumn.HeaderText = "RootDirectory";
-            this.rootDirectoryDataGridViewTextBoxColumn.Name = "rootDirectoryDataGridViewTextBoxColumn";
-            this.rootDirectoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // driveTypeDataGridViewTextBoxColumn
-            // 
-            this.driveTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.driveTypeDataGridViewTextBoxColumn.DataPropertyName = "DriveType";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.driveTypeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.driveTypeDataGridViewTextBoxColumn.HeaderText = "DriveType";
-            this.driveTypeDataGridViewTextBoxColumn.Name = "driveTypeDataGridViewTextBoxColumn";
-            this.driveTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // driveFormatDataGridViewTextBoxColumn
-            // 
-            this.driveFormatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.driveFormatDataGridViewTextBoxColumn.DataPropertyName = "DriveFormat";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Lime;
-            this.driveFormatDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.driveFormatDataGridViewTextBoxColumn.HeaderText = "DriveFormat";
-            this.driveFormatDataGridViewTextBoxColumn.Name = "driveFormatDataGridViewTextBoxColumn";
-            this.driveFormatDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // volumeLabelDataGridViewTextBoxColumn
-            // 
-            this.volumeLabelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.volumeLabelDataGridViewTextBoxColumn.DataPropertyName = "VolumeLabel";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Lime;
-            this.volumeLabelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.volumeLabelDataGridViewTextBoxColumn.HeaderText = "VolumeLabel";
-            this.volumeLabelDataGridViewTextBoxColumn.Name = "volumeLabelDataGridViewTextBoxColumn";
-            this.volumeLabelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Column_Selected
-            // 
-            this.Column_Selected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle6.NullValue = false;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Lime;
-            this.Column_Selected.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column_Selected.FillWeight = 75F;
-            this.Column_Selected.HeaderText = "Selected";
-            this.Column_Selected.Name = "Column_Selected";
-            // 
-            // Column_StressTest
-            // 
-            this.Column_StressTest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle7.NullValue = false;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Lime;
-            this.Column_StressTest.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column_StressTest.FillWeight = 50F;
-            this.Column_StressTest.HeaderText = "Stress Test";
-            this.Column_StressTest.Name = "Column_StressTest";
-            // 
-            // Column_MountImage
-            // 
-            this.Column_MountImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_DriveInfo.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView_DriveInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_DriveInfo.GridColor = System.Drawing.Color.Yellow;
+            this.dataGridView_DriveInfo.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView_DriveInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_DriveInfo.Name = "dataGridView_DriveInfo";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle8.NullValue = false;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Lime;
-            this.Column_MountImage.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column_MountImage.FillWeight = 50F;
-            this.Column_MountImage.HeaderText = "Mount Image";
-            this.Column_MountImage.Name = "Column_MountImage";
-            this.Column_MountImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_MountImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column_BitLocker
-            // 
-            this.Column_BitLocker.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle9.NullValue = false;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Lime;
-            this.Column_BitLocker.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column_BitLocker.FillWeight = 50F;
-            this.Column_BitLocker.HeaderText = "Bit Locker";
-            this.Column_BitLocker.Name = "Column_BitLocker";
-            // 
-            // Column_CreateImage
-            // 
-            this.Column_CreateImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle10.NullValue = false;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Lime;
-            this.Column_CreateImage.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column_CreateImage.FillWeight = 50F;
-            this.Column_CreateImage.HeaderText = "Create Image";
-            this.Column_CreateImage.Name = "Column_CreateImage";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_DriveInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView_DriveInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_DriveInfo.Size = new System.Drawing.Size(794, 364);
+            this.dataGridView_DriveInfo.TabIndex = 4;
+            this.dataGridView_DriveInfo.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_DriveInfo_ColumnHeaderMouseClick);
+            this.dataGridView_DriveInfo.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_DriveInfo_ColumnHeaderMouseDoubleClick);
+            this.dataGridView_DriveInfo.Click += new System.EventHandler(this.dataGridView_DriveInfo_Click);
             // 
             // bindingSource_MultiDriveInfo
             // 
@@ -397,9 +283,10 @@
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(570, 0);
+            this.splitter1.Location = new System.Drawing.Point(794, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(4);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(10, 296);
+            this.splitter1.Size = new System.Drawing.Size(13, 364);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
@@ -408,10 +295,11 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tabControl1.Location = new System.Drawing.Point(580, 0);
+            this.tabControl1.Location = new System.Drawing.Point(807, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(200, 296);
+            this.tabControl1.Size = new System.Drawing.Size(267, 364);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -419,10 +307,11 @@
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.ForeColor = System.Drawing.Color.Lime;
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(192, 270);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(259, 335);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Drive Info";
             // 
@@ -432,11 +321,11 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.groupBox1.Size = new System.Drawing.Size(186, 157);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(251, 193);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -461,26 +350,28 @@
             this.tableLayoutPanel1.Controls.Add(label7, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.label_DiveFormat, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 13);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 15);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 141);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(243, 174);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label_DriveName
             // 
             this.label_DriveName.AutoSize = true;
             this.label_DriveName.ForeColor = System.Drawing.Color.Lime;
-            this.label_DriveName.Location = new System.Drawing.Point(3, 0);
+            this.label_DriveName.Location = new System.Drawing.Point(4, 0);
+            this.label_DriveName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_DriveName.Name = "label_DriveName";
-            this.label_DriveName.Size = new System.Drawing.Size(35, 13);
+            this.label_DriveName.Size = new System.Drawing.Size(45, 16);
             this.label_DriveName.TabIndex = 0;
             this.label_DriveName.Text = "Name";
             // 
@@ -488,9 +379,10 @@
             // 
             this.label_DriveType.AutoSize = true;
             this.label_DriveType.ForeColor = System.Drawing.Color.Lime;
-            this.label_DriveType.Location = new System.Drawing.Point(3, 36);
+            this.label_DriveType.Location = new System.Drawing.Point(4, 44);
+            this.label_DriveType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_DriveType.Name = "label_DriveType";
-            this.label_DriveType.Size = new System.Drawing.Size(59, 13);
+            this.label_DriveType.Size = new System.Drawing.Size(75, 16);
             this.label_DriveType.TabIndex = 2;
             this.label_DriveType.Text = "Drive Type";
             // 
@@ -498,9 +390,10 @@
             // 
             this.label_DriveTotalSize.AutoSize = true;
             this.label_DriveTotalSize.ForeColor = System.Drawing.Color.Lime;
-            this.label_DriveTotalSize.Location = new System.Drawing.Point(3, 117);
+            this.label_DriveTotalSize.Location = new System.Drawing.Point(4, 145);
+            this.label_DriveTotalSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_DriveTotalSize.Name = "label_DriveTotalSize";
-            this.label_DriveTotalSize.Size = new System.Drawing.Size(54, 13);
+            this.label_DriveTotalSize.Size = new System.Drawing.Size(68, 16);
             this.label_DriveTotalSize.TabIndex = 8;
             this.label_DriveTotalSize.Text = "Total Size";
             // 
@@ -508,9 +401,10 @@
             // 
             this.label_DriveAvailableFreeSpace.AutoSize = true;
             this.label_DriveAvailableFreeSpace.ForeColor = System.Drawing.Color.Lime;
-            this.label_DriveAvailableFreeSpace.Location = new System.Drawing.Point(3, 96);
+            this.label_DriveAvailableFreeSpace.Location = new System.Drawing.Point(4, 119);
+            this.label_DriveAvailableFreeSpace.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_DriveAvailableFreeSpace.Name = "label_DriveAvailableFreeSpace";
-            this.label_DriveAvailableFreeSpace.Size = new System.Drawing.Size(84, 13);
+            this.label_DriveAvailableFreeSpace.Size = new System.Drawing.Size(108, 16);
             this.label_DriveAvailableFreeSpace.TabIndex = 6;
             this.label_DriveAvailableFreeSpace.Text = "Available Space";
             // 
@@ -518,9 +412,10 @@
             // 
             this.label_IsReady.AutoSize = true;
             this.label_IsReady.ForeColor = System.Drawing.Color.Lime;
-            this.label_IsReady.Location = new System.Drawing.Point(3, 76);
+            this.label_IsReady.Location = new System.Drawing.Point(4, 94);
+            this.label_IsReady.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_IsReady.Name = "label_IsReady";
-            this.label_IsReady.Size = new System.Drawing.Size(55, 13);
+            this.label_IsReady.Size = new System.Drawing.Size(69, 16);
             this.label_IsReady.TabIndex = 4;
             this.label_IsReady.Text = "Is Ready?";
             // 
@@ -528,27 +423,30 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Lime;
-            this.label11.Location = new System.Drawing.Point(3, 56);
+            this.label11.Location = new System.Drawing.Point(4, 69);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 13);
+            this.label11.Size = new System.Drawing.Size(91, 16);
             this.label11.TabIndex = 8;
             this.label11.Text = "Valume Label";
             // 
             // label_DiveFormat
             // 
             this.label_DiveFormat.ForeColor = System.Drawing.Color.Lime;
-            this.label_DiveFormat.Location = new System.Drawing.Point(3, 13);
+            this.label_DiveFormat.Location = new System.Drawing.Point(4, 16);
+            this.label_DiveFormat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_DiveFormat.Name = "label_DiveFormat";
-            this.label_DiveFormat.Size = new System.Drawing.Size(100, 23);
+            this.label_DiveFormat.Size = new System.Drawing.Size(133, 28);
             this.label_DiveFormat.TabIndex = 9;
             this.label_DiveFormat.Text = "Drive Format";
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(141, 245);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(259, 335);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Filters";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -684,12 +582,127 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(100, 6);
             // 
+            // driveInfoBindingSource
+            // 
+            this.driveInfoBindingSource.DataSource = typeof(System.IO.DriveInfo);
+            // 
+            // rootDirectoryDataGridViewTextBoxColumn
+            // 
+            this.rootDirectoryDataGridViewTextBoxColumn.DataPropertyName = "RootDirectory";
+            this.rootDirectoryDataGridViewTextBoxColumn.HeaderText = "RootDirectory";
+            this.rootDirectoryDataGridViewTextBoxColumn.Name = "rootDirectoryDataGridViewTextBoxColumn";
+            this.rootDirectoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // driveFormatDataGridViewTextBoxColumn
+            // 
+            this.driveFormatDataGridViewTextBoxColumn.DataPropertyName = "DriveFormat";
+            this.driveFormatDataGridViewTextBoxColumn.HeaderText = "DriveFormat";
+            this.driveFormatDataGridViewTextBoxColumn.Name = "driveFormatDataGridViewTextBoxColumn";
+            this.driveFormatDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // volumeLabelDataGridViewTextBoxColumn
+            // 
+            this.volumeLabelDataGridViewTextBoxColumn.DataPropertyName = "VolumeLabel";
+            this.volumeLabelDataGridViewTextBoxColumn.HeaderText = "VolumeLabel";
+            this.volumeLabelDataGridViewTextBoxColumn.Name = "volumeLabelDataGridViewTextBoxColumn";
+            this.volumeLabelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalSizeDataGridViewTextBoxColumn
+            // 
+            this.totalSizeDataGridViewTextBoxColumn.DataPropertyName = "TotalSize";
+            this.totalSizeDataGridViewTextBoxColumn.HeaderText = "TotalSize";
+            this.totalSizeDataGridViewTextBoxColumn.Name = "totalSizeDataGridViewTextBoxColumn";
+            this.totalSizeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column_Selected
+            // 
+            this.Column_Selected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.NullValue = false;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Lime;
+            this.Column_Selected.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column_Selected.FillWeight = 75F;
+            this.Column_Selected.HeaderText = "Run";
+            this.Column_Selected.Name = "Column_Selected";
+            this.Column_Selected.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column_Selected.TrueValue = "false";
+            // 
+            // Column_StressTest
+            // 
+            this.Column_StressTest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.NullValue = false;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Lime;
+            this.Column_StressTest.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column_StressTest.FillWeight = 50F;
+            this.Column_StressTest.HeaderText = "Stress Test";
+            this.Column_StressTest.Name = "Column_StressTest";
+            this.Column_StressTest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column_StressTest.TrueValue = "true";
+            // 
+            // Column_MountImage
+            // 
+            this.Column_MountImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle4.NullValue = false;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Lime;
+            this.Column_MountImage.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column_MountImage.FillWeight = 50F;
+            this.Column_MountImage.HeaderText = "Mount Image";
+            this.Column_MountImage.Name = "Column_MountImage";
+            this.Column_MountImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_MountImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column_BitLocker
+            // 
+            this.Column_BitLocker.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle5.NullValue = false;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Lime;
+            this.Column_BitLocker.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column_BitLocker.FillWeight = 50F;
+            this.Column_BitLocker.HeaderText = "Bitlock";
+            this.Column_BitLocker.Name = "Column_BitLocker";
+            this.Column_BitLocker.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column_CreateImage
+            // 
+            this.Column_CreateImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle6.NullValue = false;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Lime;
+            this.Column_CreateImage.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column_CreateImage.FillWeight = 50F;
+            this.Column_CreateImage.HeaderText = "Create Image";
+            this.Column_CreateImage.Name = "Column_CreateImage";
+            this.Column_CreateImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // enhancedDriveInfoBindingSource
+            // 
+            this.enhancedDriveInfoBindingSource.DataSource = typeof(FAT_Utility.EnhancedDriveInfo);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 296);
+            this.ClientSize = new System.Drawing.Size(1176, 364);
             this.Controls.Add(this.toolStripContainer1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_SelectedDriveInfo)).EndInit();
@@ -707,6 +720,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driveInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enhancedDriveInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -739,10 +754,12 @@
         private System.Windows.Forms.BindingSource bindingSource_MultiDriveInfo;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.DataGridView dataGridView_DriveInfo;
+        private System.Windows.Forms.BindingSource enhancedDriveInfoBindingSource;
+        private System.Windows.Forms.BindingSource driveInfoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn rootDirectoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn driveTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn driveFormatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn volumeLabelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalSizeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Selected;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column_StressTest;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column_MountImage;

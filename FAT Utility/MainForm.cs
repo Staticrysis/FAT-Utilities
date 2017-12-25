@@ -19,9 +19,14 @@ namespace FAT_Utility
             toolStripButton_RefreshDrives_Click(null, null);
         }
 
+        public void InitializeMainForm()
+        {
+            
+        }
+
         private void toolStripButton_Options_Click(object sender, EventArgs e)
         {
-
+            Data.Testing();
         }
 
         private void toolStripButton_RunAll_Click(object sender, EventArgs e)
@@ -56,10 +61,27 @@ namespace FAT_Utility
 
         private void dataGridView_DriveInfo_Click(object sender, EventArgs e)
         {
-            var v = (DataGridView)sender;
-            if (v.CurrentRow.DataBoundItem != null)
-                bindingSource_SelectedDriveInfo.DataSource = v.CurrentRow.DataBoundItem;
+            var view = (DataGridView)sender;
+            if (view.CurrentRow != null)
+                bindingSource_SelectedDriveInfo.DataSource = view.CurrentRow.DataBoundItem;
+            
             //Maybe place a progress bar update in this event later. 
+        }
+
+        private void dataGridView_DriveInfo_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var view = (DataGridView)sender;
+            for (int i = 0; i < view.Rows.Count; i++)
+               if (dataGridView_DriveInfo[e.ColumnIndex, i].ReadOnly == false)
+                   dataGridView_DriveInfo[e.ColumnIndex, i].Value = true;
+        }
+
+        private void dataGridView_DriveInfo_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var view = (DataGridView)sender;
+            for (int i = 0; i < view.Rows.Count; i++)
+                if (dataGridView_DriveInfo[e.ColumnIndex, i].ReadOnly == false)
+                    dataGridView_DriveInfo[e.ColumnIndex, i].Value = false;
         }
     }
 }
