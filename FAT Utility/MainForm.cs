@@ -33,7 +33,10 @@ namespace FAT_Utility
 
         private void toolStripButton_RunAll_Click(object sender, EventArgs e)
         {
-
+            //toolStripButton_StressTest_Click(null, null);
+            //toolStripButton_MountImage_Click(null, null);
+            //toolStripButton_BitLock_Click(null, null);
+            //toolStripButton_CreateImage_Click(null, null);
         }
 
         private void toolStripButton_StressTest_Click(object sender, EventArgs e)
